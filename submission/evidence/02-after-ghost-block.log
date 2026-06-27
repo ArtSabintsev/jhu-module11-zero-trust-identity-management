@@ -1,0 +1,39 @@
+### After applying ghostBlock.config to blog.home.local
+HTTP/2 301 
+server: openresty
+date: Sat, 27 Jun 2026 19:39:35 GMT
+content-type: text/html
+content-length: 166
+location: https://admin.home.local/ghost/
+strict-transport-security: max-age=63072000;includeSubDomains; preload
+
+
+### Public blog root still allowed
+HTTP/2 200 
+server: openresty
+date: Sat, 27 Jun 2026 19:39:40 GMT
+content-type: text/html; charset=utf-8
+content-length: 17138
+x-powered-by: Express
+cache-control: public, max-age=0
+etag: W/"42f2-upitNzjXB9CKhGQDvkAq4IsDOPM"
+vary: Accept-Encoding
+strict-transport-security: max-age=63072000;includeSubDomains; preload
+x-served-by: blog.home.local
+
+HTML title:
+Ghost
+
+### Ghost API path still allowed by exception
+HTTP/2 200 
+server: openresty
+date: Sat, 27 Jun 2026 19:39:40 GMT
+content-type: application/json; charset=utf-8
+content-length: 340
+x-powered-by: Express
+content-version: v6.47
+vary: Accept-Version, Accept-Encoding
+cache-control: no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0
+etag: W/"154-QwHpYuIoN6zpzL21IXRTpYo24YI"
+strict-transport-security: max-age=63072000;includeSubDomains; preload
+

@@ -1,0 +1,52 @@
+### Container status
+NAMES                 STATUS                   PORTS
+ghost                 Up 21 seconds            2368/tcp
+ghost-db              Up 28 seconds            3306/tcp, 33060/tcp
+nginx-proxy-manager   Up 4 minutes             0.0.0.0:80-81->80-81/tcp, [::]:80-81->80-81/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp
+authelia              Up 4 minutes (healthy)   9091/tcp
+
+### Public blog root via HTTPS
+HTTP/2 200 
+server: openresty
+date: Sat, 27 Jun 2026 19:36:52 GMT
+content-type: text/html; charset=utf-8
+content-length: 17138
+x-powered-by: Express
+cache-control: public, max-age=0
+etag: W/"42f2-upitNzjXB9CKhGQDvkAq4IsDOPM"
+vary: Accept-Encoding
+strict-transport-security: max-age=63072000;includeSubDomains; preload
+x-served-by: blog.home.local
+
+HTML title:
+Ghost
+
+### Baseline exposed Ghost admin path on blog.home.local before ghostBlock.config
+HTTP/2 200 
+server: openresty
+date: Sat, 27 Jun 2026 19:36:52 GMT
+content-type: text/html; charset=UTF-8
+content-length: 3690
+x-powered-by: Express
+cache-control: no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0
+etag: e6a3633be60545e34efd7c098b55840d
+x-frame-options: sameorigin
+accept-ranges: bytes
+vary: Accept-Encoding
+strict-transport-security: max-age=63072000;includeSubDomains; preload
+x-served-by: blog.home.local
+
+HTML signal:
+contains ghost
+contains admin
+contains ember
+
+### Unauthenticated admin route should redirect to Authelia
+HTTP/2 302 
+server: openresty
+date: Sat, 27 Jun 2026 19:36:52 GMT
+content-type: text/html
+content-length: 142
+location: https://auth.home.local/?rd=https://admin.home.local/ghost/
+strict-transport-security: max-age=63072000;includeSubDomains; preload
+

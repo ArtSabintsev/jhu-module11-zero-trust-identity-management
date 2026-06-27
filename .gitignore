@@ -1,0 +1,9 @@
+.env
+authelia/config/
+certs/
+ghost/
+nginx-proxy-manager/
+.local/
+submission/LOCAL-CREDENTIALS-DO-NOT-SUBMIT.txt
+
+.DS_Store
