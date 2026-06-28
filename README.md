@@ -6,8 +6,6 @@ Use these files to build the lab environment in your Linux sandbox so you can fo
 
 ## Local lab status
 
-This working copy has been configured as a local Module 11 lab under `jhu-modules/jhu-module11-zero-trust-identity-management`.
-
 The running stack is:
 
 - Nginx Proxy Manager reverse proxy on ports `80`, `81`, and `443`
