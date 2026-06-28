@@ -6,7 +6,7 @@ This lab runs Ghost CMS behind Nginx Proxy Manager, with Authelia in front of th
 
 ## 2. Initial Exposure and Trust Assumptions
 
-The asset being protected is Ghost's administrative URL hierarchy at `/ghost/`. In the initial state, `https://blog.home.local/ghost/` returned `HTTP/2 200` and served Ghost admin application content. That is the bad state: a public hostname exposed a management surface. The weak assumption was that the blog hostname only carried public content, but Ghost puts admin under the same application unless the proxy blocks or reroutes it. Zero Trust breaks that assumption. Being able to reach the blog should not mean being able to reach the CMS administration path.
+The asset being protected is Ghost's administrative URL hierarchy at `/ghost/`. In the initial state, `https://blog.home.local/ghost/` returned `HTTP/2 200` and served Ghost admin application content. Anyone who could reach the public blog could also reach the CMS management surface. The weak assumption was that the blog hostname only carried public content, but Ghost puts admin under the same application unless the proxy blocks or reroutes it. Zero Trust breaks that assumption. Being able to reach the blog should not mean being able to reach the CMS administration path.
 
 ## 3. Identity and Access Design
 

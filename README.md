@@ -4,7 +4,7 @@ This repository contains the configuration files for the assignment.
 
 Use these files to build the lab environment in your Linux sandbox so you can focus on the main goal of the assignment: applying Zero Trust and identity management principles to a web application, then evaluating the result using AAA and CI4A.
 
-## Local lab status
+## Lab status
 
 The running stack is:
 
@@ -21,8 +21,6 @@ The report and captured evidence are in:
 - `submission/evidence/01-baseline-and-admin-redirect.log`
 - `submission/evidence/02-after-ghost-block.log`
 - `submission/evidence/03-authelia-identity-evidence.log`
-
-Local testing used `curl --resolve <host>:443:127.0.0.1` instead of editing `/etc/hosts`, because privileged host-file edits were not available in this environment.
 
 ## Files in this repository
 
